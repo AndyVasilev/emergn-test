@@ -55,7 +55,7 @@ body {
       display: flex;
       flex-direction: column;
       .name {
-        font-size: 2.5rem;
+        font-size: 2.5em;
         font-weight: normal;
       }
       .click {
@@ -75,6 +75,14 @@ body {
           margin: 3px 0;
         }
       }
+
+      *[contenteditable] {
+        margin: 0;
+        background: @color-white;
+        border: 1px solid darken(@color-gray, 10%);
+        cursor: text;
+      }
+
       .edit {
         margin: 0;
         background: @color-white;
@@ -86,49 +94,63 @@ body {
         right: 15px;
         top: 50%;
         transform: translateY(-50%);
-        .save,
-        .cancel {
-          margin-right: 5px;
-          cursor: pointer;
-          &:before {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 25px;
-            width: 25px;
-            color: @color-white;
-            background-color: @color-gray;
-            border-radius: 100%;
-          }
-        }
-        .save {
-          &:before {
-            content: '✓';
-          }
-        }
-        .cancel {
-          margin-right: 0;
-          &:before {
-            content: '𐄂';
-          }
-        }
-        .size-s {
-          &::before {
-            height: 15px;
-            width: 15px;
-            font-size: 0.750em;
-          }
-        }
       }
       .hide {
         display: none;
       }
     }
 
+    .save,
+    .cancel {
+      margin-right: 5px;
+      cursor: pointer;
+      &:before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        width: 25px;
+        color: @color-white;
+        background-color: @color-gray;
+        border-radius: 100%;
+      }
+    }
+    .save {
+      &:before {
+        content: '✓';
+      }
+    }
+    .cancel {
+      margin-right: 0;
+      &:before {
+        content: '𐄂';
+      }
+    }
+    .size-s {
+      &::before {
+        height: 15px;
+        width: 15px;
+        font-size: 0.750em;
+      }
+    }
+
     .tecnology {
       display: flex;
       margin: 15px 0;
+      &-item {
+        position: relative;
+      }
       span {
+        &.cancel {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0;
+          margin: 0;
+          &::before {
+            background: @color-red;
+          }
+        }
         &.strong {
           background: @color-black;
         }
@@ -177,18 +199,18 @@ body {
 .item {
   background-color: @color-white;
   &-header {
-    height: 30%;
+    min-height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.750em;
     text-align: center;
     padding: 15px 0;
     background: fadeout(@color-white, 10%);
     box-sizing: border-box;
     .full {
-      font-size: 2.5rem;
+      font-size: 2.5em;
       font-weight: bold;
+      margin: 10px 0;
     }
   }
   &-content {
@@ -206,7 +228,7 @@ body {
       flex-direction: column;
       z-index: 100;
       .author {
-        font-size: 0.750rem;
+        font-size: 0.750em;
         font-weight: bold;
         text-align: right;
         margin-top: 10px;
@@ -220,7 +242,7 @@ body {
   }
   &-name {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.3em;
   }
 }
 
@@ -240,7 +262,7 @@ body {
   &::after {
     position: absolute;
     color: @color-gray;
-    font-size: 8rem;
+    font-size: 8em;
     line-height: 0;
     z-index: 0;
   }

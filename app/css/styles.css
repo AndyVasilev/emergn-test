@@ -62,7 +62,7 @@ body {
           flex-direction: column;
 }
 .header .about .person .name {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: normal;
 }
 .header .about .person .click {
@@ -84,6 +84,12 @@ body {
 .header .about .person .content-edit:nth-of-type(2n) {
   margin: 3px 0;
 }
+.header .about .person *[contenteditable] {
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  cursor: text;
+}
 .header .about .person .edit {
   margin: 0;
   background: #ffffff;
@@ -99,13 +105,16 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.header .about .person .buttons .save,
-.header .about .person .buttons .cancel {
+.header .about .person .hide {
+  display: none;
+}
+.header .about .save,
+.header .about .cancel {
   margin-right: 5px;
   cursor: pointer;
 }
-.header .about .person .buttons .save:before,
-.header .about .person .buttons .cancel:before {
+.header .about .save:before,
+.header .about .cancel:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,22 +130,19 @@ body {
   background-color: #eaeaea;
   border-radius: 100%;
 }
-.header .about .person .buttons .save:before {
+.header .about .save:before {
   content: '✓';
 }
-.header .about .person .buttons .cancel {
+.header .about .cancel {
   margin-right: 0;
 }
-.header .about .person .buttons .cancel:before {
+.header .about .cancel:before {
   content: '𐄂';
 }
-.header .about .person .buttons .size-s::before {
+.header .about .size-s::before {
   height: 15px;
   width: 15px;
   font-size: 0.750em;
-}
-.header .about .person .hide {
-  display: none;
 }
 .header .about .tecnology {
   display: -webkit-box;
@@ -144,12 +150,25 @@ body {
   display: flex;
   margin: 15px 0;
 }
+.header .about .tecnology-item {
+  position: relative;
+}
 .header .about .tecnology span {
   color: #ffffff;
   text-transform: uppercase;
   margin-left: 5px;
   padding: 5px 10px;
   border-radius: 3px;
+}
+.header .about .tecnology span.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+}
+.header .about .tecnology span.cancel::before {
+  background: #f87c76;
 }
 .header .about .tecnology span.strong {
   background: #000000;
@@ -188,7 +207,7 @@ body {
   background-color: #ffffff;
 }
 .item-header {
-  height: 30%;
+  min-height: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,7 +218,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.750em;
   text-align: center;
   padding: 15px 0;
   background: rgba(255, 255, 255, 0.9);
@@ -207,8 +225,9 @@ body {
           box-sizing: border-box;
 }
 .item-header .full {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: bold;
+  margin: 10px 0;
 }
 .item-content {
   height: 70%;
@@ -238,7 +257,7 @@ body {
   z-index: 100;
 }
 .item-content .article .author {
-  font-size: 0.750rem;
+  font-size: 0.750em;
   font-weight: bold;
   text-align: right;
   margin-top: 10px;
@@ -254,7 +273,7 @@ body {
 }
 .item-name {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 .quotes {
   position: relative;
@@ -273,7 +292,7 @@ body {
 .quotes::after {
   position: absolute;
   color: #eaeaea;
-  font-size: 8rem;
+  font-size: 8em;
   line-height: 0;
   z-index: 0;
 }
