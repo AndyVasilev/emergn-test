@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 .template {
   display: grid;
@@ -110,11 +111,9 @@ body {
 }
 .header .about .save,
 .header .about .cancel {
+  position: relative;
   margin-right: 5px;
   cursor: pointer;
-}
-.header .about .save:before,
-.header .about .cancel:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,19 +129,44 @@ body {
   background-color: #eaeaea;
   border-radius: 100%;
 }
+.header .about .save:before,
+.header .about .save:after {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+}
 .header .about .save:before {
-  content: '✓';
+  left: 7px;
+  height: 3px;
+  width: 5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.header .about .save:after {
+  right: 7px;
+  height: 3px;
+  width: 9px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .header .about .cancel {
   margin-right: 0;
 }
-.header .about .cancel:before {
-  content: '𐄂';
+.header .about .cancel:before,
+.header .about .cancel:after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 11px;
+  background-color: #ffffff;
 }
-.header .about .size-s::before {
-  height: 15px;
-  width: 15px;
-  font-size: 0.750em;
+.header .about .cancel:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.header .about .cancel:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .header .about .tecnology {
   display: -webkit-box;
@@ -152,23 +176,48 @@ body {
 }
 .header .about .tecnology-item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 5px;
+}
+.header .about .tecnology-item:first-child {
+  margin-left: 0;
 }
 .header .about .tecnology span {
   color: #ffffff;
   text-transform: uppercase;
-  margin-left: 5px;
   padding: 5px 10px;
   border-radius: 3px;
 }
 .header .about .tecnology span.cancel {
   position: absolute;
-  top: 0;
-  right: 0;
+  right: 5px;
+  height: 15px;
+  width: 15px;
   padding: 0;
   margin: 0;
+  background-color: #f87c76;
+  border-radius: 100%;
 }
-.header .about .tecnology span.cancel::before {
-  background: #f87c76;
+.header .about .tecnology span.cancel:before,
+.header .about .tecnology span.cancel:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 9px;
+  background-color: #ffffff;
+}
+.header .about .tecnology span.cancel:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.header .about .tecnology span.cancel:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .header .about .tecnology span.strong {
   background: #000000;
@@ -178,9 +227,6 @@ body {
 }
 .header .about .tecnology span.junior {
   background: #999999;
-}
-.header .about .tecnology span:first-child {
-  margin-left: 0;
 }
 .header .about .print {
   position: absolute;
@@ -204,10 +250,11 @@ body {
   border-top: none;
 }
 .item {
+  display: grid;
+  grid-template-rows: auto 1fr;
   background-color: #ffffff;
 }
 .item-header {
-  min-height: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -230,7 +277,7 @@ body {
   margin: 10px 0;
 }
 .item-content {
-  height: 70%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
