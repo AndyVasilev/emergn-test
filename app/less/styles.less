@@ -1,5 +1,10 @@
 @import "variables.less";
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   width: 100%;
@@ -15,16 +20,16 @@ body {
 .template {
   display: grid;
   grid-template-rows: 1fr 2fr;
-  grid-template: "a" 33.333%
-                 "b" 33.333%
-                 "b" 33.333%;
+  grid-template: "header" 33.333%
+                 "main" 33.333%
+                 "main" 33.333%;
   height: 100%;
   padding: 1.5vh;
   box-sizing: border-box;
 }
 
 .header {
-  grid-area: a;
+  grid-area: header;
   display: grid;
   grid-template-columns: 1fr 3fr;
   .avatar {
@@ -43,14 +48,80 @@ body {
     align-items: flex-start;
     background-color: @color-gray;
     padding: 2.5vh;
+    .info {
+      width: 70%;
+    }
     .person{
       display: flex;
       flex-direction: column;
       .name {
         font-size: 2.5rem;
         font-weight: normal;
+      }
+      .click {
+        width: 100%;
         margin: 1px;
         padding: 5px;
+        &:hover {
+          margin: 0;
+          border: 1px solid darken(@color-gray,10%);
+        }
+      }
+      .content-edit {
+        position: relative;
+        display: flex;
+        cursor: pointer;
+        &:nth-of-type(2n) {
+          margin: 3px 0;
+        }
+      }
+      .edit {
+        margin: 0;
+        background: @color-white;
+        border: 1px solid darken(@color-gray,10%);
+      }
+      .buttons {
+        position: absolute;
+        display: flex;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        .save,
+        .cancel {
+          margin-right: 5px;
+          cursor: pointer;
+          &:before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25px;
+            width: 25px;
+            color: @color-white;
+            background-color: @color-gray;
+            border-radius: 100%;
+          }
+        }
+        .save {
+          &:before {
+            content: '✓';
+          }
+        }
+        .cancel {
+          margin-right: 0;
+          &:before {
+            content: '𐄂';
+          }
+        }
+        .size-s {
+          &::before {
+            height: 15px;
+            width: 15px;
+            font-size: 0.750em;
+          }
+        }
+      }
+      .hide {
+        display: none;
       }
     }
 
@@ -58,8 +129,17 @@ body {
       display: flex;
       margin: 15px 0;
       span {
+        &.strong {
+          background: @color-black;
+        }
+        &.middle {
+          background: lighten(@color-black,40%);
+        }
+        &.junior {
+          background: lighten(@color-black,60%);
+        }
         color: @color-white;
-        background: @color-black;
+        text-transform: uppercase;
         margin-left: 5px;
         padding: 5px 10px;
         border-radius: 3px;
@@ -84,7 +164,7 @@ body {
 }
 
 .main {
-  grid-area: b;
+  grid-area: main;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -97,25 +177,34 @@ body {
 .item {
   background-color: @color-white;
   &-header {
+    height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 25%;
     font-size: 0.750em;
     text-align: center;
     padding: 15px 0;
     background: fadeout(@color-white, 10%);
     box-sizing: border-box;
+    .full {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
   }
   &-content {
-    height: 75%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
     padding: 0 25px;
-    font-size: 0.875em;
+    box-sizing: border-box;
+    .lists {
+      padding-left: 10px;
+    }
     .article {
       position: relative;
       display: flex;
       flex-direction: column;
-      z-index: 10;
+      z-index: 100;
       .author {
         font-size: 0.750rem;
         font-weight: bold;
@@ -124,8 +213,14 @@ body {
       }
     }
   }
+  .center {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
   &-name {
     margin: 0;
+    font-size: 1.3rem;
   }
 }
 
@@ -155,4 +250,8 @@ body {
   background-image: url('/img/code.png');
   background-size: cover;
   filter: grayscale(1);
+}
+
+.border-b {
+  border-bottom: 1px solid @color-gray;
 }
