@@ -13,11 +13,11 @@ body {
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
-.template {
+.emergn-template {
   display: grid;
   grid-template-rows: 1fr 2fr;
-  grid-template: "header" 33.333% "main" 33.333% "main" 33.333%;
-  height: 100%;
+  grid-template: "header" minmax(300px, 33.333%) "main" "main";
+  height: 100vh;
   padding: 1.5vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -48,7 +48,7 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   background-color: #eaeaea;
-  padding: 2.5vh;
+  padding: 1.5em;
 }
 .header .about .info {
   width: 70%;
@@ -168,13 +168,13 @@ body {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.header .about .tecnology {
+.header .about .tecnology .skill-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 15px 0;
 }
-.header .about .tecnology-item {
+.header .about .tecnology .skill-items .skill-item {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -183,17 +183,31 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 5px;
+  cursor: default;
 }
-.header .about .tecnology-item:first-child {
+.header .about .tecnology .skill-items .skill-item:first-child {
   margin-left: 0;
 }
-.header .about .tecnology span {
+.header .about .tecnology .skill-items .skill-item:hover .cancel {
+  opacity: 1;
+}
+.header .about .tecnology .skill-items .skill-item[data-level=senior] span:first-child {
+  background: #000000;
+}
+.header .about .tecnology .skill-items .skill-item[data-level=middle] span:first-child {
+  background: #666666;
+}
+.header .about .tecnology .skill-items .skill-item[data-level=junior] span:first-child {
+  background: #999999;
+}
+.header .about .tecnology .skill-items .skill-item span {
   color: #ffffff;
   text-transform: uppercase;
   padding: 5px 10px;
   border-radius: 3px;
 }
-.header .about .tecnology span.cancel {
+.header .about .tecnology .skill-items .skill-item span.cancel {
+  opacity: 0;
   position: absolute;
   right: 5px;
   height: 15px;
@@ -203,30 +217,55 @@ body {
   background-color: #f87c76;
   border-radius: 100%;
 }
-.header .about .tecnology span.cancel:before,
-.header .about .tecnology span.cancel:after {
+.header .about .tecnology .skill-items .skill-item span.cancel:before,
+.header .about .tecnology .skill-items .skill-item span.cancel:after {
   content: '';
   position: absolute;
   height: 2px;
   width: 9px;
   background-color: #ffffff;
 }
-.header .about .tecnology span.cancel:before {
+.header .about .tecnology .skill-items .skill-item span.cancel:before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.header .about .tecnology span.cancel:after {
+.header .about .tecnology .skill-items .skill-item span.cancel:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.header .about .tecnology span.strong {
-  background: #000000;
+.header .about .tecnology .add-skill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 31px;
+  width: 250px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #00ff00;
 }
-.header .about .tecnology span.middle {
-  background: #666666;
+.header .about .tecnology .add-skill input.add {
+  height: 29px;
+  border: none;
+  padding: 0 5px;
+  outline: none;
 }
-.header .about .tecnology span.junior {
-  background: #999999;
+.header .about .tecnology .add-skill .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .about .tecnology .add-skill .save {
+  margin-left: 5px;
 }
 .header .about .print {
   position: absolute;
@@ -238,6 +277,7 @@ body {
   padding: 5px 15px;
   background: #000000;
   border-radius: 20px;
+  cursor: pointer;
 }
 .main {
   grid-area: main;
@@ -285,7 +325,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 25px;
+  padding: 10px 25px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -351,4 +391,8 @@ body {
 }
 .border-b {
   border-bottom: 1px solid #eaeaea;
+}
+.buttons-template,
+.skill-item-template {
+  display: none;
 }

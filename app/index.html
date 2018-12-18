@@ -1,168 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Emergn Test Task</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Emergn Test Task</title>
 </head>
 <body>
-  <div class="template">
+<div class="emergn-template">
     <header class="header">
-      <div class="avatar">
-        <img src="img/avatar.jpeg" alt="John Smith">
-      </div>
-      <section class="about">
-        <div class="info">
-
-          <div class="person">
-              <div class="content-edit">
-                  <h1 class="name click" data-editable>John Smith</h1>
-              </div>
-              <div class="content-edit">
-                  <span class="place click" data-editable>Portland, Oregon, USA</span>
-              </div>
-              <div class="content-edit">
-                  <span class="language click" data-editable>English</span>
-              </div>
-          </div>
-
-          <div class="tecnology">
-            <div class="tecnology-item">
-              <span class="strong">PHP</span>
-              <span class="cancel"></span>
-            </div>
-            <div class="tecnology-item">
-              <span class="strong">Ruby</span>
-              <span class="cancel"></span>
-            </div>
-            <div class="tecnology-item">
-              <span class="middle">Javascript</span>
-              <span class="cancel"></span>
-            </div>
-            <div class="tecnology-item">
-              <span class="junior">Actionscript</span>
-              <span class="cancel"></span>
-            </div>
-          </div>
-          <span class="add">Add skills</span>
+        <div class="avatar">
+            <img src="img/avatar.jpeg" alt="John Smith">
         </div>
-        <a class="print">Print this page</a>
-      </section>
+        <section class="about">
+            <div class="info">
+                <div class="person">
+                    <div class="content-edit">
+                        <h1 class="name click" data-editable>John Smith</h1>
+                    </div>
+                    <div class="content-edit">
+                        <span class="place click" data-editable>Portland, Oregon, USA</span>
+                    </div>
+                    <div class="content-edit">
+                        <span class="language click" data-editable>English</span>
+                    </div>
+                </div>
+                <div class="tecnology">
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="PHP" data-level="senior">
+                            <span>PHP</span>
+                            <span class="cancel"></span>
+                        </div>
+                        <div class="skill-item" data-skill="Ruby" data-level="senior">
+                            <span>Ruby</span>
+                            <span class="cancel"></span>
+                        </div>
+                        <div class="skill-item" data-skill="Javascript" data-level="middle">
+                            <span>Javascript</span>
+                            <span class="cancel"></span>
+                        </div>
+                        <div class="skill-item" data-skill="Actionscript" data-level="junior">
+                            <span>Actionscript</span>
+                            <span class="cancel"></span>
+                        </div>
+                    </div>
+                    <div class="add-skill">
+                        <input type="text" class="add" placeholder="Enter your skill">
+                        <div class="right">
+                            <select>
+                                <option>senior</option>
+                                <option>middle</option>
+                                <option>junior</option>
+                            </select>
+                            <span class="save"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a class="print" data-action="print">Print this page</a>
+        </section>
     </header>
 
     <main class="main">
-      <section class="item">
-        <div class="item-header">
-          <h2 class="item-name">Portfolio</h2>
-          <span>PHP,Ruby,Javascript</span>
-        </div>
-        <main class="item-content">
-          <ul class="lists">
-            <li><b>NavalPlan</b>, PHP, Ruby</li>
-            <li><b>MyTime</b>, Javascript</li>
-            <li><b>Formidable</b>, PHP, Ruby</li>
-            <li><b>MyTime</b>, Javascript</li>
-            <li><b>Monsoon</b>, ActionScript</li>
-          </ul>
-        </main>
-      </section>
-      <section class="item">
-        <header class="item-header">
-          <h2 class="item-name">Experience</h2>
-        </header>
-        <main class="item-content">
-          <ul class="lists">
-            <li><b>PHP</b>, 6 years</li>
-            <li><b>Ruby</b>, 7 years</li>
-            <li><b>Javascript</b>, 4 years</li>
-            <li><b>ActionScript</b>, 3 years</li>
-          </ul>
-        </main>
-      </section>
+        <section class="item">
+            <header class="item-header">
+                <h2 class="item-name">Portfolio</h2>
+                <span>PHP,Ruby,Javascript</span>
+            </header>
+            <main class="item-content">
+                <ul class="lists">
+                    <li><b>NavalPlan</b>, PHP, Ruby</li>
+                    <li><b>MyTime</b>, Javascript</li>
+                    <li><b>Formidable</b>, PHP, Ruby</li>
+                    <li><b>MyTime</b>, Javascript</li>
+                    <li><b>Monsoon</b>, ActionScript</li>
+                </ul>
+            </main>
+        </section>
+        <section class="item">
+            <header class="item-header">
+                <h2 class="item-name">Experience</h2>
+            </header>
+            <main class="item-content">
+                <ul class="lists">
+                    <li><b>PHP</b>, 6 years</li>
+                    <li><b>Ruby</b>, 7 years</li>
+                    <li><b>Javascript</b>, 4 years</li>
+                    <li><b>ActionScript</b>, 3 years</li>
+                </ul>
+            </main>
+        </section>
 
-      <section class="item code">
-        <header class="item-header">
-          <h2 class="item-name">Sample code and <br> algorithms</h2>
-        </header>
-      </section>
+        <section class="item code">
+            <header class="item-header">
+                <h2 class="item-name">Sample code and <br> algorithms</h2>
+            </header>
+        </section>
 
-      <section class="item">
-        <header class="item-header border-b">
-          <h2 class="item-name">Availability</h2>
-          <span class="full">Full-time</span>
-        </header >
-        <main class="item-content center">
-          <h2 class="item-name">Preferred environment</h2>
-          <span>Git, GitHub, vim, emacs,<br>Jenkins, Mac OSX</span>
-        </main>
-      </section>
+        <section class="item">
+            <header class="item-header border-b">
+                <h2 class="item-name">Availability</h2>
+                <span class="full">Full-time</span>
+            </header>
+            <main class="item-content center">
+                <h2 class="item-name">Preferred environment</h2>
+                <span>Git, GitHub, vim, emacs,<br>Jenkins, Mac OSX</span>
+            </main>
+        </section>
 
-      <section class="item">
-        <header class="item-header">
-          <h2 class="item-name">The most amazing …</h2>
-        </header>
-        <main class="item-content quotes">
-          <div class="article">
-              <i>
-                … Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua
-                et dolore magna aliqua et dol
-                ut labore et dolore
-              </i>
-              <author class="author">- Martin</author>
-          </div>
-        </main>
-      </section>
+        <section class="item">
+            <header class="item-header">
+                <h2 class="item-name">The most amazing …</h2>
+            </header>
+            <main class="item-content quotes">
+                <div class="article">
+                    <i>
+                        … Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua
+                        et dolore magna aliqua et dol
+                        ut labore et dolore
+                    </i>
+                    <author class="author">- Martin</author>
+                </div>
+            </main>
+        </section>
 
-      <section class="item">
-        <header class="item-header">
-          <h2 class="item-name">In clients I look for …</h2>
-        </header>
-        <main class="item-content quotes">
-          <div class="article">
-              <i>
-                … Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua
-                et dolore magna aliqua et dol ut
-                labore et dolore
-              </i>
-              <author class="author">- Martin</author>
-          </div>
-        </main>
-      </section>
+        <section class="item">
+            <header class="item-header">
+                <h2 class="item-name">In clients I look for …</h2>
+            </header>
+            <main class="item-content quotes">
+                <div class="article">
+                    <i>
+                        … Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua
+                        et dolore magna aliqua et dol ut
+                        labore et dolore
+                    </i>
+                    <author class="author">- Martin</author>
+                </div>
+            </main>
+        </section>
 
-      <section class="item empty"></section>
+        <section class="item empty"></section>
 
-      <section class="item">
-        <header class="item-header">
-          <h2 class="item-name">Note</h2>
-        </header>
-        <main class="item-content quotes">
-          <div class="article">
-            <i>
-              … Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua
-              et dolore magna aliqua et dol ut
-              labore et dolore
-            </i>
-          </div>
-        </main>
-      </section>
+        <section class="item">
+            <header class="item-header">
+                <h2 class="item-name">Note</h2>
+            </header>
+            <main class="item-content quotes">
+                <div class="article">
+                    <i>
+                        … Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua
+                        et dolore magna aliqua et dol ut
+                        labore et dolore
+                    </i>
+                </div>
+            </main>
+        </section>
     </main>
-  </div>
-  <div class="buttons-template">
-      <span class="save"></span>
-      <span class="cancel"></span>
-  </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="js/index.js"></script>
+</div>
+<div class="buttons-template">
+    <span class="save"></span>
+    <span class="cancel"></span>
+</div>
+<div class="skill-item-template">
+    <span></span>
+    <span class="cancel"></span>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="js/index.js"></script>
 </body>
 </html>
